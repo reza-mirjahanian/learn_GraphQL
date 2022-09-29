@@ -1,7 +1,15 @@
 import JobList from './JobList';
-import { jobs } from '../fake-data';
+import {useJobs} from "../graphql/hooks";
 
 function JobBoard() {
+    const {jobs,loading, error} = useJobs();
+
+    if (loading){
+        return <p>Loading ........</p>
+    }
+  if (error){
+      return <p>Sorry something went wrong, motherfucker</p>
+  }
   return (
     <div>
       <h1 className="title">

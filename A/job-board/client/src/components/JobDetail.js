@@ -1,11 +1,15 @@
-import { useParams } from 'react-router';
-import { Link } from 'react-router-dom';
-import { jobs } from '../fake-data';
+import {useParams} from 'react-router';
+import {Link} from 'react-router-dom';
+import {useJob} from "../graphql/hooks";
 
 function JobDetail() {
   const { jobId } = useParams();
+  const {job, loading} = useJob(jobId);
 
-  const job = jobs.find((job) => job.id === jobId);
+  if(loading){
+      return <p> Loading ...</p>
+    }
+
   return (
     <div>
       <h1 className="title">
