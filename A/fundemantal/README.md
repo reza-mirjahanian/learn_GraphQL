@@ -9,5 +9,3 @@ By Reza Mirjahanian
 - `npm test` - Runs tests.
 - `npm run test-watch` - Runs tests(nodemon).
 - `npm run coverage` - Runs code coverage.
-
-
